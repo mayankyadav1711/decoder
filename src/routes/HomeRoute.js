@@ -11,21 +11,24 @@ function HomeRoute() {
   const { data: javaRepos } = useRepositories('stars:>10000 language:java');
 
   return (
-    <div>
+    <div className="bg-dark text-white min-h-screen">
       <Hero />
-      <div className="container mx-auto py-8 grid grid-cols-1 gap-4 md:grid-cols-2">
-        <RepositoriesTable
-          label="Most Popular Javascript"
-          repositories={jsRepos}
-        />
-        <RepositoriesTable
-          label="Most Popular Typescript"
-          repositories={tsRepos}
-        />
-        <RepositoriesTable label="Most Popular Rust" repositories={rustRepos} />
-        <RepositoriesTable label="Most Popular Go" repositories={goRepos} />
-        <RepositoriesTable label="Most Popular Python" repositories={pythonRepos} />
-        <RepositoriesTable label="Most Popular Java" repositories={javaRepos} />
+      <div className="container mx-auto py-8">
+        <h2 className="text-4xl font-bold mb-16 text-center text-gradient">Popular Repositories on GitHub</h2>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <RepositoriesTable
+            label="Most Popular Javascript"
+            repositories={jsRepos}
+          />
+          <RepositoriesTable
+            label="Most Popular Typescript"
+            repositories={tsRepos}
+          />
+          <RepositoriesTable label="Most Popular Rust" repositories={rustRepos} />
+          <RepositoriesTable label="Most Popular Go" repositories={goRepos} />
+          <RepositoriesTable label="Most Popular Python" repositories={pythonRepos} />
+          <RepositoriesTable label="Most Popular Java" repositories={javaRepos} />
+        </div>
       </div>
     </div>
   );

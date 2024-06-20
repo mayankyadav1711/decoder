@@ -25,14 +25,14 @@ function Folder({ repoName, owner, folder }) {
   if (folder.name) {
     name = (
       <div
-        className="select-none whitespace-nowrap"
+        className="select-none whitespace-nowrap flex items-center space-x-2 p-2 rounded-md cursor-pointer hover:bg-gray-700 transition-colors duration-200"
         onClick={(e) => {
           e.stopPropagation();
           setExpanded(!expanded);
         }}
       >
         {expanded ? <ChevronDownIcon /> : <ChevronRightIcon />}
-        {folder.name}
+        <span>{folder.name}</span>
       </div>
     );
   }
@@ -51,14 +51,9 @@ function Folder({ repoName, owner, folder }) {
 
   return (
     <div>
-      <div className="hover:font-bold">{name}</div>
+      <div>{name}</div>
       {expanded && (
-        <div
-          className={classNames(
-            { 'border-l': expanded },
-            'ml-1.5 border-gray-400'
-          )}
-        >
+        <div className={classNames('ml-2 border-l border-gray-600')}>
           {children}
         </div>
       )}

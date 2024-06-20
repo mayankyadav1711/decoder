@@ -14,13 +14,11 @@ function Editor({ file, onExplainRequest }) {
         options={{
           minimap: { enabled: false },
           glyphMargin: true,
-          lineNumbersMinChars: 1,
+          lineNumbersMinChars: 3, // Adjusted for better alignment
+          padding: { top: 10, bottom: 10 },
         }}
         onValidate={() => {}}
         onMount={(editor) => {
-          // For debugging
-          window.ed = editor;
-
           const explainCode = () => {
             const selectedRange = editor.getSelection();
             const text = editor.getModel().getValueInRange(selectedRange);
@@ -47,13 +45,40 @@ function Editor({ file, onExplainRequest }) {
               domNode.classList.add('z-50');
               const button = document.createElement('button');
               button.classList.add(
-                'bg-blue-500',
-                'text-white',
-                'p-3',
-                'rounded',
-                'font-bold',
-                'text-xl'
+                'w-[150px]',
+                'bg-black',
+                'h-[50px]',
+                'my-3',
+                'flex',
+                'items-center',
+                'justify-center',
+                'rounded-xl',
+                'cursor-pointer',
+                'relative',
+                'overflow-hidden',
+                'transition-all',
+                'duration-500',
+                'ease-in-out',
+                'shadow-md',
+                'hover:scale-105',
+                'hover:shadow-lg',
+                'before:absolute',
+                'before:top-0',
+                'before:-left-full',
+                'before:w-full',
+                'before:h-full',
+                'before:bg-gradient-to-r',
+                'before:from-[#009b49]',
+                'before:to-[rgb(105,184,141)]',
+                'before:transition-all',
+                'before:duration-500',
+                'before:ease-in-out',
+                'before:z-[-1]',
+                'before:rounded-xl',
+                'hover:before:left-0',
+                'text-[#fff]'
               );
+              
               button.innerText = 'Explain Code';
               button.addEventListener('click', explainCode);
               domNode.appendChild(button);

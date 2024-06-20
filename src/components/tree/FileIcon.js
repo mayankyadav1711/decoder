@@ -21,7 +21,7 @@ function FileIcon({ name, className }) {
     <i
       role="img"
       aria-label={name}
-      className={classNames(className, klass)}
+      className={classNames(className, klass, "text-2xl text-gray-400 hover:text-white")}
     ></i>
   );
 }

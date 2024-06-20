@@ -5,18 +5,18 @@ function Hero() {
     <>
    
 
-    <main class="main">
-       <section class="section banner banner-section">
+    <main class="main mt-[-4rem] mb-20">
+       <section class="section banner banner-section ">
           <div class="container banner-column">
-             <img class="banner-image" src="https://i.ibb.co/vB5LTFG/Headphone.png" alt="banner"/>
+             <img class="banner-image" src="https://i.ibb.co/0m4dv6N/view-brain-with-circuit-board.png" alt="banner"/>
              <div class="banner-inner">
-                <h1 class="heading-xl">Experience Media Like Never Before</h1>
+                <h1 class="heading-xl">Understand Your Code Instantly</h1>
                 <p class="paragraph">
-                   Enjoy award-winning stereo beats with wireless listening freedom and sleek,
-                   streamlined with premium padded and delivering first-rate playback.
+                Discover the power of instant code explanations. Search any GitHub repository and get clear,
+                concise explanations of the code. Enhance your coding knowledge and productivity effortlessly.
                 </p>
                 <button class="btn btn-darken btn-inline">
-                   Our Products<i class="bx bx-right-arrow-alt"></i>
+                   Explore Now<i class="bx bx-right-arrow-alt"></i>
                 </button>
              </div>
              <div class="banner-links">

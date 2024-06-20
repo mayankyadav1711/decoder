@@ -5,7 +5,7 @@ async function repositoriesFetcher([url, searchQuery]) {
   const res = await axios.get(url, {
     params: {
       q: searchQuery || '',
-      per_page: 10,
+      per_page: 5,
     },
   });
 

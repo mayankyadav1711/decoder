@@ -17,9 +17,9 @@ function ExplanationPopup({ selection, onClose }) {
   };
 
   return (
-    <div className="z-50 bg-gray-700 overflow-scroll relative w-96 p-2 pr-3 border drop-shadow-lg">
-      <pre className="whitespace-pre-wrap text-xs">{content}</pre>
-      <button onClick={handleClose} className="text-xs border px-2 py-0.5">
+    <div className="z-50 bg-gray-700 overflow-y-auto relative w-96 p-4 border rounded-lg shadow-lg">
+      <pre className="whitespace-pre-wrap text-sm text-gray-200">{content}</pre>
+      <button onClick={handleClose} className="text-sm border px-2 py-1 mt-2 bg-gray-600 text-gray-200 rounded-md hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-400">
         Close
       </button>
     </div>
