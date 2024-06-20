@@ -1,5 +1,4 @@
-<figure><img src="https://raw.githubusercontent.com/suren-atoyan/monaco-react/HEAD/playground/logo.svg" alt=""> </figure> 
-
+<figure><img src="https://raw.githubusercontent.com/suren-atoyan/monaco-react/HEAD/playground/logo.svg" alt="" style="background:white"> </figure> 
 # Decoder
 
 Decoder is a versatile platform designed to enhance your coding experience by integrating GitHub repository search with an AI-driven code explanation feature.
