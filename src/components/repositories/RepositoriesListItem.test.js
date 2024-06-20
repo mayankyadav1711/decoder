@@ -1,13 +1,8 @@
-import { render, screen,act } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router";
 import RepositoriesListItem from "./RepositoriesListItem";
 
-// jest.mock("../tree/FileIcon", () => {
-//   //content of FileIcon.js
-//   return () => {
-//     return "File Icon Component";
-//   };
-// });
+
 function renderComponent() {
   const repository = {
     full_name: "facebook/react",
@@ -25,16 +20,14 @@ function renderComponent() {
 }
 test("Shows a link to the github homepage for repository", async () => {
   renderComponent();
-  await act(async()=>{
-    await pause();
-  })
-//   await screen.findByRole("img", { name: "python" });
+  await screen.findByRole('img', {name : 'python'});
+
 });
 
-const pause = () => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve();
-    }, 100);
-  });
-};
+const pause = () =>{
+    return new Promise(resolve=>{
+        setTimeout(()=>{
+            resolve();
+        },100)
+    })
+}
