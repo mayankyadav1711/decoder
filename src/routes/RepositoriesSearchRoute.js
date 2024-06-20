@@ -12,7 +12,7 @@ function RepositoriesSearchRoute() {
 
   if (isLoading) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-dark">
+      <div className="flex items-center justify-center min-h-screen bg-dark mt-60">
         <div className="loader"></div>
       </div>
     );
