@@ -6,7 +6,7 @@ import RepositoriesListItem from "./RepositoriesListItem";
 function renderComponent() {
   const repository = {
     full_name: "facebook/react",
-    language: "python",
+    language: "Javascript",
     description: "good project",
     owner: "myk",
     name: "react",
@@ -21,7 +21,7 @@ function renderComponent() {
 }
 test("Shows a link to the github homepage for repository", async () => {
   const {repository} =  renderComponent();
-  await screen.findByRole('img', {name : 'python'});
+  await screen.findByRole('img', {name : 'Javascript'});
   const link = screen.getByRole('link', {
     name: /github repository/i,
   })
@@ -29,10 +29,8 @@ test("Shows a link to the github homepage for repository", async () => {
 
 });
 
-const pause = () =>{
-    return new Promise(resolve=>{
-        setTimeout(()=>{
-            resolve();
-        },100)
-    })
-}
+test('shows a fileicon with an appropriate icon', async()=>{
+renderComponent();
+const icon = await screen.findByRole('img', {name: 'Javascript'})
+expect(icon).toHaveClass('js-icon')
+});
