@@ -2,6 +2,12 @@ import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router";
 import RepositoriesListItem from "./RepositoriesListItem";
 
+jest.mock('../tree/FileIcon', ()=>{
+    //content of FileIcon.js
+    return () =>{
+        return 'File Icon Component'
+    }
+})
 function renderComponent() {
   const repository = {
     full_name: "facebook/react",
