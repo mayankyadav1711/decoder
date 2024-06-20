@@ -377,7 +377,7 @@ video {
 
 .banner-image {
    display: block;
-   max-width: 18rem;
+   max-width: 20rem;
    height: auto;
    margin-top: 2rem;
    object-fit: cover;

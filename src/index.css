@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Cinzel&family=Handjet:wght@200&family=Satisfy&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap');
 
 .gutter {
   background-color: #3b3b3b;
@@ -52,4 +53,8 @@ i.icon:before {
 
 .icon-large:hover {
   color: #ffffff; /* White color on hover */
+}
+.coolfont{
+  font-family: "Anta", sans-serif;
+
 }
