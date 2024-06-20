@@ -9,7 +9,7 @@ function AuthButtons() {
   } else if (user) {
     return (
       <Link
-        className="block whitespace-nowrap rounded-md px-5 py-2.5 text-sm font-medium text-white bg-gradient-to-r from-blue-500 to-purple-500 hover:bg-gradient-to-l hover:from-purple-500 hover:to-blue-500 transition-colors duration-300"
+       className="block whitespace-nowrap rounded-md px-5 py-2.5 text-sm font-medium text-black bg-white hover:bg-gray-200 transition-colors duration-300"
         to="/signout"
       >
         Sign Out

@@ -11,7 +11,7 @@ function Header() {
     >
        <div className="mx-auto flex h-16 max-w-screen-xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo image */}
-        <img src={logo} alt="Logo" className="h-12 w-auto mr-[-29rem]" />
+        <img src={logo} alt="Logo" className="h-12 w-auto mr-[-35rem]" />
 
         {/* Site title */}
         <Link

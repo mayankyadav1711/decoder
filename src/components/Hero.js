@@ -20,10 +20,10 @@ function Hero() {
                 </button>
              </div>
              <div class="banner-links">
-                <a href="#" title=""><i class="bx bxl-facebook"></i></a>
-                <a href="#" title=""><i class="bx bxl-instagram"></i></a>
-                <a href="#" title=""><i class="bx bxl-twitter"></i></a>
-                <a href="#" title=""><i class="bx bxl-youtube"></i></a>
+                <a href="https://www.linkedin.com/in/mayankyadav17/" target='_blank' title=""><i class="bx bxl-linkedin"></i></a>
+                <a href="https://github.com/mayankyadav1711" target='_blank' title=""><i class="bx bxl-github"></i></a>
+                <a href="https://x.com/mayankyadav_17" target='_blank' title=""><i class="bx bxl-twitter"></i></a>
+                <a href="https://www.youtube.com/channel/UCIrpCdKKTh86NLvUylLlvCQ" target='_blank' title=""><i class="bx bxl-youtube"></i></a>
              </div>
           </div>
        </section>
