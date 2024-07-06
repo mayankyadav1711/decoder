@@ -20,6 +20,7 @@ i.icon:before {
 
 .shortenline{
   line-clamp: 1;
+  -webkit-line-clamp: 1;
 }
 
 /* Add these styles to your CSS file */
