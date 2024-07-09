@@ -108,7 +108,7 @@ function quantumAnalyze(codebase) {
           >
             <div className="p-6">
               <h2 className="text-4xl font-extrabold text-white justify-center flex mb-6">
-                Quantum Code Analyzer{" "}
+                 Code Analyzer{" "}
               </h2>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div className="space-y-6">

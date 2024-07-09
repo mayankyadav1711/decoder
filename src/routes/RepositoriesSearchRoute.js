@@ -6,19 +6,13 @@ import RepositoriesListItem from '../components/repositories/RepositoriesListIte
 
 function RepositoriesSearchRoute() {
   const [params] = useSearchParams();
-  const {
-    data: repositories,
-    isLoading,
-    error,
-  } = useRepositories(params.get('q'));
+  const { data: repositories, isLoading, error } = useRepositories(params.get('q'));
 
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { 
+    visible: {
       opacity: 1,
-      transition: { 
-        staggerChildren: 0.1 
-      }
+      transition: { staggerChildren: 0.1 }
     }
   };
 
@@ -29,7 +23,7 @@ function RepositoriesSearchRoute() {
 
   if (isLoading) {
     return (
-      <motion.div 
+      <motion.div
         className="flex items-center justify-center min-h-screen bg-gradient-to-b from-gray-950 via-blue-950 to-purple-950"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -39,7 +33,7 @@ function RepositoriesSearchRoute() {
     );
   } else if (error) {
     return (
-      <motion.div 
+      <motion.div
         className="flex items-center justify-center min-h-screen bg-gradient-to-b from-gray-950 via-blue-950 to-purple-950"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -57,21 +51,21 @@ function RepositoriesSearchRoute() {
   ));
 
   return (
-    <motion.div 
-      className="min-h-screen bg-gradient-to-b from-gray-950 via-blue-950 to-purple-950 py-20 px-4 mt-10"
+    <motion.div
+      className="min-h-screen bg-gradient-to-b from-gray-950 via-blue-950 to-purple-950 py-20 px-4"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
     >
       <div className="container mx-auto">
-        <motion.h2 
-          className="text-5xl md:text-6xl font-extrabold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-600"
+        <motion.h2
+          className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-600"
           variants={itemVariants}
         >
           <FaSearch className="inline-block mr-4" />
           Search Results
         </motion.h2>
-        <motion.div 
+        <motion.div
           className="bg-gray-900/30 backdrop-blur-xl p-8 rounded-2xl shadow-2xl border border-gray-800"
           variants={itemVariants}
         >
@@ -80,7 +74,7 @@ function RepositoriesSearchRoute() {
               {renderedRepositories}
             </div>
           ) : (
-            <motion.p 
+            <motion.p
               className="text-center text-gray-300 py-12 text-xl"
               variants={itemVariants}
             >
