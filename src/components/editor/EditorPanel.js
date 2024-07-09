@@ -23,7 +23,7 @@ function EditorPage() {
   };
 
   return (
-    <div>
+    <div className='mt-20'>
       <Breadcrumbs path={path} />
       <Editor onExplainRequest={handleExplainRequest} file={file} />
       <ExplanationList

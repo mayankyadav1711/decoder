@@ -30,23 +30,23 @@ function RepositoriesSearchRoute() {
   if (isLoading) {
     return (
       <motion.div 
-        className="flex items-center justify-center min-h-screen bg-gray-900"
+        className="flex items-center justify-center min-h-screen bg-gradient-to-b from-gray-950 via-blue-950 to-purple-950"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
-        <div className="w-16 h-16 border-t-4 border-blue-500 border-solid rounded-full animate-spin"></div>
+        <div className="w-20 h-20 border-t-4 border-blue-500 border-solid rounded-full animate-spin"></div>
       </motion.div>
     );
   } else if (error) {
     return (
       <motion.div 
-        className="flex items-center justify-center min-h-screen bg-gray-900"
+        className="flex items-center justify-center min-h-screen bg-gradient-to-b from-gray-950 via-blue-950 to-purple-950"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
-        <div className="bg-red-500 text-white p-6 rounded-lg shadow-lg flex items-center space-x-4">
-          <FaExclamationTriangle className="text-2xl" />
-          <span>{error.message}</span>
+        <div className="bg-red-500/80 backdrop-blur-xl text-white p-8 rounded-xl shadow-2xl flex items-center space-x-4">
+          <FaExclamationTriangle className="text-3xl" />
+          <span className="text-lg">{error.message}</span>
         </div>
       </motion.div>
     );
@@ -58,33 +58,37 @@ function RepositoriesSearchRoute() {
 
   return (
     <motion.div 
-      className="container mx-auto py-12 px-4 text-white"
+      className="min-h-screen bg-gradient-to-b from-gray-950 via-blue-950 to-purple-950 py-20 px-4 mt-10"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
     >
-      <motion.h2 
-        className="text-4xl md:text-5xl font-bold mb-10 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600"
-        variants={itemVariants}
-      >
-        <FaSearch className="inline-block mr-4" />
-        Search Results
-      </motion.h2>
-      <motion.div 
-        className="bg-gray-800 p-4 md:p-6 rounded-lg shadow-xl"
-        variants={itemVariants}
-      >
-        {renderedRepositories.length > 0 ? (
-          renderedRepositories
-        ) : (
-          <motion.p 
-            className="text-center text-gray-400 py-8"
-            variants={itemVariants}
-          >
-            No repositories found for your search query.
-          </motion.p>
-        )}
-      </motion.div>
+      <div className="container mx-auto">
+        <motion.h2 
+          className="text-5xl md:text-6xl font-extrabold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-600"
+          variants={itemVariants}
+        >
+          <FaSearch className="inline-block mr-4" />
+          Search Results
+        </motion.h2>
+        <motion.div 
+          className="bg-gray-900/30 backdrop-blur-xl p-8 rounded-2xl shadow-2xl border border-gray-800"
+          variants={itemVariants}
+        >
+          {renderedRepositories.length > 0 ? (
+            <div className="space-y-6">
+              {renderedRepositories}
+            </div>
+          ) : (
+            <motion.p 
+              className="text-center text-gray-300 py-12 text-xl"
+              variants={itemVariants}
+            >
+              No repositories found for your search query.
+            </motion.p>
+          )}
+        </motion.div>
+      </div>
     </motion.div>
   );
 }
