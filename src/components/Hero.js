@@ -10,6 +10,9 @@ import {
   HiCube,
 } from "react-icons/hi";
 import "./hero.css";
+import AICodeAnalyzer from "./AICodeAnalyzer";
+import QuantumProject from "./QuantumProject";
+import NeuralNexus from "./NeuralNexus";
 function Hero() {
   const [scanning, setScanning] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -144,61 +147,11 @@ function Hero() {
           </div>
         </motion.div>
 
-        {/* Surprise Feature: Interactive 3D Code Cube */}
-        <motion.div
-          className="mt-16 flex justify-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2 }}
-        >
-          <motion.div
-            className="w-64 h-64 bg-gray-900 rounded-2xl shadow-2xl overflow-hidden relative cursor-pointer"
-            whileHover={{ scale: 1.05 }}
-            onClick={() => setScanning(!scanning)}
-          >
-            <div className="absolute inset-2 bg-gray-800 rounded-xl overflow-hidden">
-              <pre className="text-xs text-blue-300 p-4 font-mono">
-                {`function analyzeCode(repo) {
-  const ai = new AI();
-  const analysis = ai.scan(repo);
-  return analysis.insights;
-}`}
-              </pre>
-              {scanning && (
-                <motion.div
-                  className="absolute inset-0 bg-blue-500/20"
-                  initial={{ y: "0%" }}
-                  animate={{ y: "100%" }}
-                  transition={{
-                    repeat: Infinity,
-                    repeatType: "loop",
-                    duration: 2,
-                    ease: "linear",
-                  }}
-                />
-              )}
-            </div>
-            <div className="absolute inset-x-0 bottom-0 h-1 bg-gray-700">
-              <motion.div
-                className="h-full bg-blue-500"
-                initial={{ width: "0%" }}
-                animate={{ width: `${progress}%` }}
-              />
-            </div>
-            <motion.div
-              className="absolute top-2 right-2 bg-blue-500 rounded-full p-2"
-              animate={{ scale: scanning ? [1, 1.2, 1] : 1 }}
-              transition={{ repeat: Infinity, duration: 1 }}
-            >
-              <HiOutlineLightningBolt className="text-white text-xl" />
-            </motion.div>
-            <div className="absolute bottom-2 left-2 right-2 flex justify-between items-center text-xs text-gray-400">
-              <span>{scanning ? "Scanning..." : "Click to Scan"}</span>
-              <span>{`${progress}%`}</span>
-            </div>
-          </motion.div>
-        </motion.div>
-
+        <div className="my-20"></div>
+        <AICodeAnalyzer />
+        <div className="my-20"></div>
+        <QuantumProject />
+   
         <motion.div
           className="flex justify-center space-x-8 mt-16"
           initial={{ y: 20, opacity: 0 }}
