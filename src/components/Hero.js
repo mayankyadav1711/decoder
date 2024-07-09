@@ -1,9 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence, useViewportScroll, useTransform } from "framer-motion";
-import { FaGithub, FaLinkedin, FaTwitter, FaYoutube } from "react-icons/fa";
+import {
+  motion,
+  AnimatePresence,
+  useViewportScroll,
+  useTransform,
+} from "framer-motion";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaTwitter,
+  FaYoutube,
+} from "react-icons/fa";
 import {
   HiOutlineArrowRight,
-  HiOutlineLightningBolt,
   HiCode,
   HiLightningBolt,
   HiSparkles,
@@ -14,6 +23,7 @@ import "aos/dist/aos.css";
 import "./hero.css";
 import AICodeAnalyzer from "./AICodeAnalyzer";
 import QuantumProject from "./QuantumProject";
+import RocketIcons from "./RocketIcons";
 
 function Hero() {
   const [scanning, setScanning] = useState(false);
@@ -48,35 +58,53 @@ function Hero() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      className="min-h-screen bg-gradient-to-br from-gray-950 via-blue-950 to-purple-950 text-white overflow-hidden relative"
+      className="min-h-screen bg-gradient-to-br from-gray-950 via-blue-950 to-purple-950  to-purple-950 text-white overflow-hidden relative"
     >
       {/* Animated background particles */}
       <ParticleBackground />
 
-  
       <div className="container mx-auto px-4 py-16 relative z-10">
-        <motion.div {...fadeIn} className="text-center mb-12" data-aos="fade-up">
-          <motion.h1
-            className="text-7xl md:text-8xl font-extrabold mb-6 text-gray-300 mt-32 [text-shadow:_2px_2px_4px_rgba(0,0,0,0.4),_-2px_-2px_4px_rgba(255,255,255,0.2)]"
-            initial={{ scale: 0.5, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            style={{
-              textShadow:
-                "0 0 80px rgba(192, 219, 255, 0.3), 0 0 32px rgba(65, 120, 255, 0.24)",
-            }}
-          >
-            Decode Your Code
-          </motion.h1>
-          <motion.p
-            className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto"
-            {...fadeIn}
-          >
-            Unleash the power of AI to decode any GitHub repository instantly.
-          </motion.p>
-        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="min-h-screen text-white overflow-hidden relative mt-32 mb-10 rounded-md"
+        >
+          <ParticleBackground />
 
-        <ExploreButton />
+          <div className="container mx-auto px-4 py-16 relative z-10 flex flex-col items-center justify-center min-h-screen">
+            <motion.div
+              {...fadeIn}
+              className="text-center mb-16"
+              data-aos="fade-up"
+            >
+              <motion.h1
+                className="text-5xl md:text-6xl font-bold mb-6 text-white"
+                initial={{ scale: 0.5, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                Unleash the power of AI to decode any GitHub repository
+                instantly.
+              </motion.h1>
+              <motion.p
+                className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8"
+                {...fadeIn}
+              >
+                <span className="coolfont font-bold text-cyan-300">DeCoder </span>
+                is free to get started with.
+              </motion.p>
+
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-4 bg-blue-600 rounded-full text-xl font-bold transition duration-300 ease-in-out transform hover:shadow-lg"
+              >
+                Explore Now
+              </motion.button>
+            </motion.div>
+          </div>
+        </motion.div>
 
         <FeatureGrid />
 
@@ -116,7 +144,6 @@ function ParticleBackground() {
     </>
   );
 }
-
 
 function ExploreButton() {
   return (
@@ -202,7 +229,10 @@ function SocialLinks() {
     { Icon: FaLinkedin, href: "https://www.linkedin.com/in/mayankyadav17/" },
     { Icon: FaGithub, href: "https://github.com/mayankyadav1711" },
     { Icon: FaTwitter, href: "https://x.com/mayankyadav_17" },
-    { Icon: FaYoutube, href: "https://www.youtube.com/channel/UCIrpCdKTh86NLvUylLlvCQ" },
+    {
+      Icon: FaYoutube,
+      href: "https://www.youtube.com/channel/UCIrpCdKTh86NLvUylLlvCQ",
+    },
   ];
 
   return (
@@ -218,11 +248,9 @@ function SocialLinks() {
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-gray-500 hover:text-white transition-colors duration-300"
-          whileHover={{ scale: 1.2, rotate: 5, y: -5 }}
-          whileTap={{ scale: 0.9 }}
+          className="text-3xl text-white transition-transform transform hover:scale-110"
         >
-          <Icon className="text-4xl" />
+          <Icon />
         </motion.a>
       ))}
     </motion.div>

@@ -42,6 +42,7 @@ function HomeRoute() {
     >
       <Hero />
       <div className="container mx-auto py-12 px-4">
+        
         <motion.h2 
           className="text-4xl md:text-5xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600"
           initial={{ y: -50, opacity: 0 }}
